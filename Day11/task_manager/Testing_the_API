@@ -1,0 +1,12 @@
+Testing the API
+
+Following is the list of URL we need to test using Chrome Advanced REST client extension with possible combinations of inputs.
+
+URL	Method	Parameters	Description
+http://localhost/s2017/Day11/task_manager/v1/register	POST	name, email, password	User registration
+http://localhost/s2017/Day11/task_manager/v1/login	POST	email, password	User login
+http://localhost/s2017/Day11/task_manager/v1/tasks	POST	task	To create new task
+http://localhost/s2017/Day11/task_manager/v1/tasks	GET		Fetching all tasks
+http://localhost/s2017/Day11/task_manager/v1/tasks/:id	GET		Fetching single task
+http://localhost/s2017/Day11/task_manager/v1/tasks/:id	PUT		Updating single task
+http://localhost/s2017/Day11/task_manager/v1/tasks/:id	DELETE	task, status	Deleting single task

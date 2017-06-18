@@ -1,0 +1,38 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		
+		$(document).ready(function()
+		{
+				$("#btn3").click(function()
+		    	{
+		        	$.ajax(
+		        		{
+		        			url: "https://jsonplaceholder.typicode.com/photos", success: function(result)
+		        			{
+		        				var str ="<table border=1><tr><th>Album Id</th><th>Album Title</th><th>Image</th></tr>";
+		            			//$("#div3").html("Output : " + JSON.stringify(result));
+		            			for (var i = 0; i < result.length; i++) {
+		            				var obj = result[i];
+		            				str += "<tr><td>" + obj.albumId + "</td>"
+		            					+ "<td>" + obj.title + "</td>"
+		            					+ "<td><img height=100 width=100 src=" + obj.url + "/></td></tr>";
+
+		            			}
+		            			str +="</table>";
+		            			$("#div3").html(str);
+		        			}
+		        		});
+		   
+				});
+		   });
+
+	</script>
+</head>
+<body>
+	<div><h2>jQuery AJAX Call Example</h2></div>
+	<button id="btn3">Click to get 5000 Records</button>
+	<div id="div3">Output 3</div>
+</body>
+</html>
